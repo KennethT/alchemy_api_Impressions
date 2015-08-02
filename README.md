@@ -1,5 +1,5 @@
 #**Alchemy Insights**
-##Dashboard that provides insights associated with digital communities
+####Dashboard that provides insights associated with digital communities
 
 Integrates the following APIs:
 
