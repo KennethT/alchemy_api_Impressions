@@ -1,0 +1,31 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+navbar {
+  padding-top: 50px;
+}
+
+.left {
+  background-color: #cccccc;
+  min-height: 800px;
+}
+
+.right {
+  background-color: #AAAAAA;
+  min-height: 800px;
+}
+
+.search-line {
+  display: block;
+  width: 100%;
+}
+
+.twitter-btn {
+  display: block;
+  width: 100%;
+}
+
+.stackoverflow-btn {
+  display: block;
+  width: 100%;
+}
