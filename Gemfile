@@ -34,7 +34,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'twitter'
 gem 'twitter-text', '~> 1.11.0'
-
+gem 'alchemy-api-rb', :require => 'alchemy_api'
 gem 'rails_12factor', group: :production
 
 # Use Capistrano for deployment
