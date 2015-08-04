@@ -9,9 +9,15 @@ class WelcomeController < ApplicationController
       @twitterblob = @tweet1.map do |tweet|
         tweet.text
       end.join(', ')
+      #twitter blob in uri format
+      @search_term_uri = URI.escape(params[:search_term1])
 
-      #unparsed json response from keyword extraction
-      @keywordresult = AlchemyAPI.search(:keyword_extraction, text: @twitterblob)
+      #sentiment associated with tweets
+      #mixed: 1 == true, type: positive, negative or neutral, score - sentiment strength
+      @sentiment = AlchemyAPI.search(:sentiment_analysis, text: @twitterblob)
+      #entity extraction associated with tweets
+      @entity = AlchemyAPI.search(:entity_extraction, text: @twitterblob)
+
     end
 
   end
