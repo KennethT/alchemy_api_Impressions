@@ -2,5 +2,24 @@ Sentiment Output:
 <%= @sentiment %>
 <br><br>
 Entity Extraction:
-<%= @entity.to_json %>
+<% if @entity %>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Text</th>
+      <th>Count</th>
+      <th>Relevance</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @entity.each do |entity| %>
+    <tr>
+      <td><%= entity["text"] %></td>
+      <td><%= entity["relevance"] %></td>
+      <td><%= entity["count"] %></td>
+    </tr>
+  </tbody><% end %>
+</table>
+<% end %>
 <br><br>
