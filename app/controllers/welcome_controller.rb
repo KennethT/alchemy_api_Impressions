@@ -17,7 +17,8 @@ class WelcomeController < ApplicationController
       @sentiment = AlchemyAPI.search(:sentiment_analysis, text: @twitterblob)
       #entity extraction associated with tweets
       @entity = AlchemyAPI.search(:entity_extraction, text: @twitterblob)
-
+      #keyword extraction associated with tweets
+      @keyword = AlchemyAPI.search(:keyword_extraction, sentiment: "1", maxRetrieve: "40", text: @twitterblob)
     end
 
   end
