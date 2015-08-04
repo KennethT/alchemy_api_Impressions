@@ -1,49 +1,5 @@
-General Sentiment:
-<% if @sentiment %>
-<%= @sentiment["score"] %><br>
-<%= @sentiment["type"] %>
-<% end %>
-<br><br>
-Entity Extraction:
-<% if @entity %>
-<table class="table table-bordered table-striped">
-  <thead>
-    <tr>
-      <th>Text</th>
-      <th>Relevance</th>
-      <th>Count</th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @entity.each do |entity| %>
-    <tr>
-      <td><%= entity["text"] %></td>
-      <td><%= entity["relevance"] %></td>
-      <td><%= entity["count"] %></td>
-    </tr>
-  </tbody><% end %>
-</table>
-<% end %>
 <br><br>
-Keyword Extraction:
-<% if @keyword %>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Text</th>
-        <th>Score</th>
-        <th>Sentiment</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @keyword.each do |keyword| %>
-      <tr>
-        <td><%= keyword["text"] %></td>
-        <td><%= keyword["sentiment"]["score"] %></td>
-        <td><%= keyword["sentiment"]["type"] %></td>
-      </tr>
-    </tbody><% end %>
-  </table>
-<% end %>
+<%= render "twitter_general" %>
+<%= render "twitter_entity" %>
+<%= render "twitter_keyword" %>

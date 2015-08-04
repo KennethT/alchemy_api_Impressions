@@ -1,14 +1,15 @@
 <div class="search-line">
   <%= form_tag '/', method: :get do %>
   <%= text_field_tag :search_term1, nil, placeholder: 'Search' %>
-  <%= submit_tag 'Gather Insights', class: 'btn-sm btn-primary' %>
   <% end %>
 </div>
 
-<div class="btn twitter-btn">
-  Twitter
+<br>
+
+<div class="btn-sm twitter-btn">
+  <%= submit_tag 'Twitter', class: 'btn-sm btn-primary' %>
 </div>
 
-<div class="btn stackoverflow-btn">
-  StackOverflow
+<div class="btn-sm stackoverflow-btn">
+  <%= submit_tag 'StackOverflow', class: 'btn-sm btn-primary' %>
 </div>
