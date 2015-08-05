@@ -20,8 +20,6 @@ class WelcomeController < ApplicationController
         req.url "/2.2/search/advanced?order=desc&sort=activity&q=#{@search_term_uri}&site=stackoverflow"
       end
 
-      # @stackoverflow1 = JSON.parse(@stackoverflow_response1.body)["items"]
-
       @stackoverflow1 = JSON.parse(@stackoverflow_response1.body)
 
       def tagparser(json)
@@ -31,7 +29,6 @@ class WelcomeController < ApplicationController
         end
         return new_array.join(", ")
       end
-
       @teststring = tagparser(@stackoverflow1)
 
       #AlchemyAPI calls analyzing stackoverflow

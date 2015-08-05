@@ -1,15 +1,17 @@
-<div class="search-line">
-  <%= form_tag '/', method: :get do %>
-  <%= text_field_tag :search_term1, nil, placeholder: 'Search' %>
-  <% end %>
-</div>
+
 
 <br>
+<ul class="nav nav-pills nav-stacked">
+<li>
+    <%= form_tag '/', method: :get do %>
+    <%= text_field_tag :search_term1, nil, placeholder: 'Search', class: 'btn-block' %>
+    <% end %>
+</li>
+<li>
+  <%= submit_tag 'Twitter', class: 'btn-sm btn-primary btn-block' %>
+</li>
 
-<div class="btn-sm twitter-btn">
-  <%= submit_tag 'Twitter', class: 'btn-sm btn-primary' %>
-</div>
-
-<div class="btn-sm stackoverflow-btn">
-  <%= submit_tag 'StackOverflow', class: 'btn-sm btn-primary' %>
-</div>
+<li>
+  <%= submit_tag 'StackOverflow', class: 'btn-sm btn-primary btn-block' %>
+</li>
+</ul>
