@@ -14,15 +14,29 @@ class WelcomeController < ApplicationController
       @entity = AlchemyAPI.search(:entity_extraction, text: @twitterblob)
       @keyword = AlchemyAPI.search(:keyword_extraction, sentiment: "1", maxRetrieve: "40", text: @twitterblob)
 
-      #stackoverflow api call
+      # stackoverflow api call
       conn = Faraday.new(:url => 'https://api.stackexchange.com')
-      stackoverflow_response1 = conn.get do |req|
+      @stackoverflow_response1 = conn.get do |req|
         req.url "/2.2/search/advanced?order=desc&sort=activity&q=#{@search_term_uri}&site=stackoverflow"
       end
 
-      @soblob = stackoverflow_response1.body.to_s
+      # @stackoverflow1 = JSON.parse(@stackoverflow_response1.body)["items"]
+
+      @stackoverflow1 = JSON.parse(@stackoverflow_response1.body)
+
+      def tagparser(json)
+        new_array = []
+            json['items'].each do |item|
+                new_array.push(item['title'])
+        end
+        return new_array.join(", ")
+      end
+
+      @teststring = tagparser(@stackoverflow1)
 
       #AlchemyAPI calls analyzing stackoverflow
+      @entity2 = AlchemyAPI.search(:entity_extraction, text: @teststring)
+      @keyword2 = AlchemyAPI.search(:keyword_extraction, sentiment: "1", maxRetrieve: "40", text: @teststring)
 
     end
 

@@ -1,1 +1,23 @@
-StackOverflow Entity Extraction: 
+
+StackOverflow Entity Extraction:<br><br>
+<% if @entity2 %>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Text</th>
+      <th>Relevance</th>
+      <th>Count</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @entity2.each do |entity| %>
+    <tr>
+      <td><%= entity["text"] %></td>
+      <td><%= entity["relevance"] %></td>
+      <td><%= entity["count"] %></td>
+    </tr>
+  </tbody><% end %>
+</table>
+<% end %>
+<br><br>

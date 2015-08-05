@@ -1,0 +1,21 @@
+StackOverflow Keyword Extraction:
+<% if @keyword2 %>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Text</th>
+        <th>Intensity (score)</th>
+        <th>Sentiment</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @keyword2.each do |keyword| %>
+      <tr>
+        <td><%= keyword["text"] %></td>
+        <td><%= keyword["sentiment"]["score"] %></td>
+        <td><%= keyword["sentiment"]["type"] %></td>
+      </tr>
+    </tbody><% end %>
+  </table>
+<% end %>
