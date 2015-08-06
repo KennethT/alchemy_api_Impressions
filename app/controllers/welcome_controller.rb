@@ -11,7 +11,6 @@ class WelcomeController < ApplicationController
       @search_term_uri = URI.escape(params[:search_term1])
 
       #AlchemyAPI calls analyzing twitter
-      @entity = AlchemyAPI.search(:entity_extraction, text: @twitterblob)
       @keyword = AlchemyAPI.search(:keyword_extraction, sentiment: "1", maxRetrieve: "40", text: @twitterblob)
 
       # stackoverflow api call
@@ -32,7 +31,6 @@ class WelcomeController < ApplicationController
       @teststring = tagparser(@stackoverflow1)
 
       #AlchemyAPI calls analyzing stackoverflow
-      @entity2 = AlchemyAPI.search(:entity_extraction, text: @teststring)
       @keyword2 = AlchemyAPI.search(:keyword_extraction, sentiment: "1", maxRetrieve: "40", text: @teststring)
 
     end
