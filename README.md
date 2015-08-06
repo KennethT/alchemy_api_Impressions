@@ -3,7 +3,7 @@
 
 ####Search a term, get sentiment to conversations that include that term
 
-Heroku Link(http://instantinsights.herokuapp.com)
+[Heroku Link](http://instantinsights.herokuapp.com)
 
 Use:
 1. Type in the name of a company or a competitor in the search box and hit enter
