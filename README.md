@@ -1,7 +1,7 @@
 #**Instant Insights**
 ####Dashboard that provides insights associated with digital communities
 
-####Search a term, get sentiment to topic associated to conversations that include that term
+####Search a term, get sentiment to conversations that include that term
 
 Use:
 
